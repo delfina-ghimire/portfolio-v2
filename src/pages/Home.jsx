@@ -1,6 +1,7 @@
 import React from "react";
 import {
   About,
+  Hero,
   Blog,
   ContactMe,
   Footer,
@@ -10,9 +11,11 @@ import {
 } from "../components";
 
 export default function Home() {
+  console.log("vite sucks");
   return (
-    <div className="h-[100vh] w-[100vw] ">
+    <div className="h-[100vh] w-[100vw]">
       <NavBar />
+      <Hero />
       <About />
       <Skills />
       <Projects />
