@@ -1,5 +1,6 @@
 import hero from "../assets/hero.svg";
 
+
 const Hero = () => {
   return (
     <section className="h-screen bg-white mb-40 flex">
