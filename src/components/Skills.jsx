@@ -1,4 +1,4 @@
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "./commons/SectionTitle";
 import { skills } from "../constants";
 
 const Skills = () => {
