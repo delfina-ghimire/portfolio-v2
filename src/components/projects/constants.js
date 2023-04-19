@@ -11,7 +11,7 @@ export const projects = [
     id: "project-1",
     title: "FriendsBook",
     desc: "A Fullstack social media application with CRUD functionality for posts & users, view friends post on your timeline, follow/unfollow users, like/dislike posts, get news and follow recomendations.",
-    tech: ["React", "MongoDB", "Express", "Node js"],
+    techs: ["React", "MongoDB", "Express", "Node js"],
     icons: [
       { src: github, alt: "View Code" },
       { src: live, alt: "View Live" },
@@ -22,7 +22,7 @@ export const projects = [
     id: "project-2",
     title: "SandBox - NFT Website",
     desc: "SandBox is the Modern UX / UI Site that allows you to the explore, create, sale, and purchase the NFTs. It consists the tuned blend of multiple complex gradiends and graphics.",
-    tech: ["React", "Tailwind css"],
+    techs: ["React", "Tailwind css"],
     icons: [
       { src: github, alt: "View Code" },
       { src: live, alt: "View Live" },
@@ -33,7 +33,7 @@ export const projects = [
     id: "project-3",
     title: "Avacodo: Ecommerce Website",
     desc: "It is a Responsive Multipage Ecommerce site with an attractive modern theme, and complex layered footer. The code is arranged in scalable organized file architecture and is written using BEM naming convention.",
-    tech: ["React", "MongoDB", "Express", "Node js"],
+    techs: ["React", "MongoDB", "Express", "Node js"],
     icons: [
       { src: github, alt: "View Code" },
       { src: live, alt: "View Live" },
@@ -44,7 +44,7 @@ export const projects = [
     id: "project-4",
     title: "Natours - Travel Website",
     desc: "A modern Travel Agency webpage built only using Html and css, written using BEM convention and followed 7-1 architecture pattern. Fluid Layouts, Responsive & flexible images,,Correct Units are also implemented.",
-    tech: ["Html", "CSS"],
+    techs: ["Html", "CSS"],
     icons: [
       { src: github, alt: "View Code" },
       { src: live, alt: "View Live" },
