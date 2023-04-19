@@ -19,6 +19,7 @@ const Navbar = () => {
       <nav>
         {navBarSection.map(({ link, title }) => (
           <a
+            key={title}
             className="ml-8 text-3xl text-gray-900 hover:text-indigo-700"
             href={link}
           >
