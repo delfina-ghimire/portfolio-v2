@@ -3,7 +3,18 @@ import SectionTitle from "../commons/SectionTitle";
 import "./contact.css";
 import shape from "../../assets/shape.png";
 import mailbox from "../../assets/Mailbox.svg";
+import { FaFacebook, FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { ImFacebook } from "react-icons/im";
 
+const socialLinks = [
+  {
+    key: "github",
+    Icon: <FaGithub size={20} />,
+  },
+  { key: "facebook", Icon: <ImFacebook size={20} /> },
+  { key: "twitter", Icon: <FaTwitter size={20} /> },
+  { key: "linkedin", Icon: <FaLinkedin size={20} /> },
+];
 const ContactMe = () => {
   return (
     <>
@@ -22,21 +33,27 @@ const ContactMe = () => {
             <div className="social-media">
               <p>Connect Online :</p>
               <div className="social-icons">
-                <a href="#">
+                {socialLinks.map(({ key, Icon }) => (
+                  <a href="#" key={key}>
+                    {Icon}
+                  </a>
+                ))}
+                {/* Use map function here*/}
+                {/* <a href="#">
                   <i className="fa-brands fa-github" />
                 </a>
                 <a href="#">
                   <i className="fab fa-twitter" />
                 </a>
                 <a href="#">
-                  <i className="fa-brands fa-medium" />
+                  <FaFacebook size={20} />
                 </a>
                 <a href="#">
                   <i className="fab fa-linkedin-in" />
                 </a>
                 <a href="#">
                   <i className="fa-solid fa-envelope" />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
