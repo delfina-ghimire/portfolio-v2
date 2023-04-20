@@ -1,5 +1,5 @@
 import Navbar from "./navbar/Navbar.jsx";
-import Hero from "./Hero";
+import Hero from "./hero/Hero.jsx";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./projects/Projects";
