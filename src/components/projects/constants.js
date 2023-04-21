@@ -13,8 +13,16 @@ export const projects = [
     desc: "A Fullstack social media application with CRUD functionality for posts & users, view friends post on your timeline, follow/unfollow users, like/dislike posts, get news and follow recomendations.",
     techs: ["React", "MongoDB", "Express", "Node js"],
     icons: [
-      { src: github, alt: "View Code" },
-      { src: live, alt: "View Live" },
+      {
+        src: github,
+        alt: "View Code",
+        link: "https://github.com/clair-daisies/social-media-app",
+      },
+      {
+        src: live,
+        alt: "View Live",
+        link: "https://github.com/clair-daisies/social-media-app",
+      },
     ],
   },
   {
@@ -51,3 +59,5 @@ export const projects = [
     ],
   },
 ];
+
+
