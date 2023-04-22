@@ -5,7 +5,7 @@ const Skills = () => {
   return (
     <div>
       <SectionTitle title="Skills" />
-      <section className="flex flex-col gap-16 md:gap-0 md:flex-row pt-10 md:pt-[10rem]">
+      <section className="flex flex-col gap-16 md:gap-0 md:flex-row pt-10 md:pt-[10rem] pb-10 md:pb-0">
         {skills.map((skill) => (
           <div
             key={skill.id}
