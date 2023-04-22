@@ -24,7 +24,7 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
 
   return (
     <>
-      <article className="flex flex-1 text-center justify-center flex-row cursor-pointer p-4 mb-[4.5rem] border border-gray-300 shadow-md rounded-[1rem] ">
+      <article className="flex flex-col md:flex-row flex-1 text-center justify-center cursor-pointer p-4 mb-[4.5rem] border border-gray-300 shadow-md rounded-[1rem] text-[1.5rem] md:text-[2rem] ">
         <div className="rounded-[1rem] pa-1">
           <img
             className="rounded-[1rem] border border-gray-200 shadow-sm "
@@ -34,14 +34,14 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
             rel="noopener noreferrer"
           />
         </div>
-        <div className="w-[60%] p-8 text-center pb-6 pt-5">
-          <h3 className="text-[2rem] font-bold leading-4 mb-8 tracking-[0.5px]">
+        <div className="w-full md:w-[60%] p-8 text-center pb-6 pt-5">
+          <h3 className=" font-bold leading-4 mb-8 tracking-[0.5px] pt-4 md:pt-10">
             {title}
           </h3>
-          <p className="text-[1.7rem] text-[#777] font-[400] mb-[1.5rem]">
+          <p className="text-[1.5rem] md:text-[1.7rem] text-[#777] font-[400] mb-[1.5rem]">
             {desc}
           </p>
-          <div className="font-[600]  text-[#777] text-[1.7rem] mb-[1.5rem] no-underline flex gap-4 items-center justify-center">
+          <div className="font-[600]  text-[#777] text-[1.5rem] md:text-[1.7rem] mb-[1.5rem] no-underline flex gap-4 items-center justify-center">
             {techs?.map((tech) => {
               return <span key={tech}>{tech}</span>;
             })}

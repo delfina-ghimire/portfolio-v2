@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div>
       <SectionTitle title={"Projects"} />
-      <section className="flex flex-col text-center justify-center rounded-lg m-20 cursor-pointer p-20 ">
+      <section className="flex flex-col text-center justify-center rounded-lg m-0 md:m-20 cursor-pointer p-20 ">
         {projects.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}

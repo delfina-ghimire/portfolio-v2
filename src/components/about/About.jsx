@@ -5,16 +5,16 @@ import styles from "../../style";
 const About = () => {
   return (
     <>
-      <div className="pb-[10rem]">
+      <div className="pb-0 md:pb-[10rem]">
         <SectionTitle title="About Me" />
       </div>
 
       <section className={styles.sectionPadding}>
-        <div className="flex items-center justify-center">
-          <div className="w-[90rem] h-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center">
+          <div className="w-[30rem] md:w-[90rem] pb-[2rem] md:pb-0 h-auto">
             <img className="w-full h-full" src={aboutImg} alt="" />
           </div>
-          <div className="text-center py-4 px-[4rem] text-[2rem]">
+          <div className="text-center py-4 -mx-[10rem] md:mx-0 px-[2rem] md:px-[4rem] text-[1.2rem]  md:text-[2rem]">
             <p className="text-slate-500">
               <b>
                 I'm a self taught web developer passionate about crafting
