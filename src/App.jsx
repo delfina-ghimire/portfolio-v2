@@ -9,7 +9,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="p-0 sm:px-[5rem]">
       <Navbar />
       <div className="mt-20">
         <Hero />
