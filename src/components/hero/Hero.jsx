@@ -18,7 +18,7 @@ const Hero = () => {
           </span>
         </h4>
       </div>
-      <div className=" flex-1 w-[100%] md:w-6/12   ">
+      <div className=" flex-1 w-[100%] md:w-6/12 pb-8 md:pb-0">
         <img className="w-full h-full" src={hero} alt="" srcSet="" />
       </div>
     </section>
