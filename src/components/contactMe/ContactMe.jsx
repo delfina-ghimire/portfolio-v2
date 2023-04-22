@@ -1,9 +1,9 @@
-import React from "react";
+import { useEffect } from "react";
 import SectionTitle from "../commons/SectionTitle";
 import "./contact.css";
 import shape from "../../assets/shape.png";
 import mailbox from "../../assets/Mailbox.svg";
-import { FaFacebook, FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { ImFacebook } from "react-icons/im";
 
 const socialLinks = [
@@ -15,11 +15,37 @@ const socialLinks = [
   { key: "twitter", Icon: <FaTwitter size={20} /> },
   { key: "linkedin", Icon: <FaLinkedin size={20} /> },
 ];
+
 const ContactMe = () => {
+  const handleFocus = (e) => {
+    let parent = e.target.parentNode;
+    parent.classList.add("focus");
+  };
+
+  const handleBlur = (e) => {
+    let parent = e.target.parentNode;
+    if (e.target.value === "") {
+      parent.classList.remove("focus");
+    }
+  };
+
+  useEffect(() => {
+    const inputs = document.querySelectorAll(".input");
+    inputs.forEach((input) => {
+      input.addEventListener("focus", handleFocus);
+      input.addEventListener("blur", handleBlur);
+
+      return () => {
+        input.removeEventListener("focus", handleFocus);
+        input.removeEventListener("blur", handleBlur);
+      };
+    });
+  }, []);
+
   return (
     <>
       <SectionTitle title={"Contact Me"} />
-      <section className="contact__container pt-10">
+      <section className="contact__container pt-10 mt-[100px]">
         <span className="big-circle" />
         <img src={shape} className="square" alt="" />
         <div className="form">
@@ -38,22 +64,6 @@ const ContactMe = () => {
                     {Icon}
                   </a>
                 ))}
-                {/* Use map function here*/}
-                {/* <a href="#">
-                  <i className="fa-brands fa-github" />
-                </a>
-                <a href="#">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a href="#">
-                  <FaFacebook size={20} />
-                </a>
-                <a href="#">
-                  <i className="fab fa-linkedin-in" />
-                </a>
-                <a href="#">
-                  <i className="fa-solid fa-envelope" />
-                </a> */}
               </div>
             </div>
           </div>
@@ -82,7 +92,7 @@ const ContactMe = () => {
                 <label htmlFor>Message</label>
                 <span>Message</span>
               </div>
-              <input type="submit" defaultValue="Send" className="form-btn" />
+              <button className="form-btn">Send</button>
             </form>
           </div>
         </div>
