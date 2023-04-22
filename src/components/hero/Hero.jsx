@@ -2,7 +2,7 @@ import hero from "../../assets/hero.svg";
 
 const Hero = () => {
   return (
-    <section className="mb-40 flex  bg-white">
+    <section className="my-40 flex  bg-white">
       <div className=" w-6/12 flex flex-1 flex-col pl-24">
         <h2 className="font-playfair items-center  text-[2rem] font-extrabold justify-center leading-10 text-left uppercase pt-32 pb-20  tracking-[2px]">
           Hey, I'm delfina. 👋
