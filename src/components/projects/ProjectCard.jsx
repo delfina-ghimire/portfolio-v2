@@ -41,7 +41,7 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
           <p className="text-[1.5rem] md:text-[1.7rem] text-[#777] font-[400] mb-[1.5rem]">
             {desc}
           </p>
-          <div className="font-[600]  text-[#777] text-[1.5rem] md:text-[1.7rem] mb-[1.5rem] no-underline flex gap-4 items-center justify-center">
+          <div className="font-[600]  text-[#777] text-[1.5rem] md:text-[1.7rem] mb-[1.5rem] no-underline flex gap-4 items-center justify-center ">
             {techs?.map((tech) => {
               return <span key={tech}>{tech}</span>;
             })}
@@ -50,7 +50,7 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
             {icons?.map((icon) => {
               return (
                 <div>
-                  <a className="p-2 cursor-pointers" href={icon.link}>
+                  <a className=" p-2 cursor-pointer" href={icon.link}>
                     <Tooltip text={icon.alt}>
                       <img src={icon.src} />
                     </Tooltip>
