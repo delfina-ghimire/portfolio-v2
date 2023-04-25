@@ -3,10 +3,29 @@ import logo from "../../assets/logo.png";
 import menu from "../../assets/menu.svg";
 import close from "../../assets/close.svg";
 import { navBarSection } from "./constants";
+import { useSpring, animated } from "@react-spring/web";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false);
   const [headerActive, setHeaderActive] = useState(false);
+
+  const styles = useSpring({
+    from: {
+      x: openSidebar ? 100 : 1,
+      opacity: openSidebar ? 0 : 1,
+      delay: 1000,
+    },
+    to: {
+      x: openSidebar ? 0 : 100,
+      opacity: openSidebar ? 1 : 0,
+      delay: 500,
+    },
+    config: {
+      mass: 1,
+      friction: 26,
+      tension: 170,
+    },
+  });
 
   useEffect(() => {
     function handleScroll() {
@@ -27,9 +46,9 @@ const Navbar = () => {
     };
   }, [headerActive]);
   return (
-    <nav>
+    <nav className="w-full flex py-6 justify-between items-center navbar">
       <div
-        className={`fixed top-0 left-0 right-0 flex items-center justify-between p-8  px-36 py-10 ${
+        className={`flex  fixed top-0 left-0 right-0 border border-red items-center justify-between  p-10 md:px-36 py-10 ${
           headerActive ? "bg-white shadow-lg" : ""
         }`}
       >
@@ -39,11 +58,11 @@ const Navbar = () => {
           </a>
         </div>
         <div>
-          <div className="invisible md:visible">
+          <div className="hidden sm:flex">
             {navBarSection.map(({ link, title }) => (
               <a
                 key={title}
-                className="ml-8 text-3xl text-gray-900 hover:text-indigo-700"
+                className="ml-8 text-xl md:text-3xl text-gray-900 hover:text-indigo-700"
                 href={link}
               >
                 {title}
@@ -51,33 +70,49 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-        {/* navbar for small device */}
-        <div className=" sm:hidden flex flex-1 justify-end items-center">
+
+        {/* navbar for small devices */}
+        <div className="relative sm:hidden flex flex-1 justify-end items-center">
           <img
-            src={toggle ? close : menu}
+            src={menu}
             alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle((prev) => !prev)}
+            className="w-[36px] h-[36px] object-contain cursor-pointer bg-gray-600 rounded-md p-2  shadow-sm"
+            onClick={() => {
+              setOpenSidebar(true);
+            }}
           />
-          <div
-            className={`${toggle ? "flex" : "hidden"} 
-            p-6 bg-red-900 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-          >
-            <ul className="list-none flex flex-col justify-end items-center flex-1">
-              {navBarSection.map((nav, index) => (
-                <li
-                  key={nav.id}
-                  className={`font-lora font-normal cursor-pointer text-[16px] text-white
-                ${
-                  index === navBarSection.length - 1 ? "mr-0" : "mb-4"
-                }           
-           `}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {openSidebar ? (
+            <>
+              <animated.div
+                className="absolute -top-[20px] -right-[20px] h-[100vh] w-[50vw] flex flex-1"
+                style={styles}
+              >
+                <img
+                  src={close}
+                  alt="menu"
+                  className="w-[36px] h-[36px] object-contain cursor-pointer bg-transparent rounded-md p-2  shadow-sm absolute right-2 top-3 border border-gray-300"
+                  onClick={() => {
+                    setOpenSidebar((prev) => !prev);
+                  }}
+                />
+                <ul className="list-none flex flex-col justify-center items-center flex-1 gap-4  bg-gray-500 border border-white-300 shadow-lg ">
+                  {navBarSection.map(({ link, title }) => (
+                    <a
+                      key={title}
+                      className="font-lora font-normal cursor-pointer text-[20px] text-white"
+                      href={link}
+                    >
+                      {title}
+                    </a>
+                  ))}
+                </ul>
+              </animated.div>
+              <div
+                className="fixed inset-0 z-40 bg-black opacity-40"
+                onClick={() => setOpenSidebar(false)}
+              ></div>
+            </>
+          ) : null}
         </div>
       </div>
     </nav>
@@ -85,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
