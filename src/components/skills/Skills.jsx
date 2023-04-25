@@ -4,7 +4,9 @@ import { skills } from "./constants";
 const Skills = () => {
   return (
     <div>
-      <SectionTitle title="Skills" />
+      <div id="Skills" className="pb-0 md:pb-[4rem]">
+        <SectionTitle title="Skills" />
+      </div>
       <section className="flex flex-col gap-16 md:gap-0 md:flex-row pt-10 md:pt-[10rem] pb-10 md:pb-0">
         {skills.map((skill) => (
           <div

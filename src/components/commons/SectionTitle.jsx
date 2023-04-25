@@ -1,6 +1,6 @@
 const SectionTitle = (props) => {
   return (
-    <section className="flex items-center justify-center relative">
+    <section className="flex items-center justify-center relative -z-10">
       <h2 className="text-gray-900 md:text-6xl text-5xl font-bold leading-10">
         {props.title}
       </h2>

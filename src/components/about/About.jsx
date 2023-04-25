@@ -5,7 +5,7 @@ import styles from "../../style";
 const About = () => {
   return (
     <>
-      <div className="pb-0 md:pb-[10rem]">
+      <div id="About" className="pb-0 md:pb-[10rem]">
         <SectionTitle title="About Me" />
       </div>
 
