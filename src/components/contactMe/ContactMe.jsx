@@ -44,7 +44,9 @@ const ContactMe = () => {
 
   return (
     <>
-      <SectionTitle title={"Contact Me"} />
+      <div id="Contact" className="pb-0 md:pb-[10rem]">
+        <SectionTitle title={"Contact Me"} />
+      </div>
       <section className="contact__container pt-10 mt-[100px]">
         <span className="big-circle" />
         <img src={shape} className="square" alt="" />
