@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import "./index.css";
-import { About, ContactMe, Hero, Navbar, Projects, Skills } from "./components";
+import { About, Blog, ContactMe, Hero, Navbar, Projects, Skills } from "./components";
 
 function App() {
   useEffect(() => {
@@ -17,6 +17,7 @@ function App() {
         <Skills />
         <Projects />
         <ContactMe />
+        <Blog/>
       </div>
     </div>
   );
