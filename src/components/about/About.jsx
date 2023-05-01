@@ -32,7 +32,7 @@ const About = () => {
               <br />
               <br />
               <b> When I'm not in front of a computer screen,</b> I'm probably
-              reading a new book, traveling or practicing Spanish.
+              reading a new book, traveling, practicing Spanish or working on a new article for my <a target="_blank" href="https://medium.com/@around_delfi" className="cursor-pointer"><span className="underline decoration-dotted underline-offset-2 decoration-blue-500">Blog</span></a>.
             </p>
           </div>
         </div>

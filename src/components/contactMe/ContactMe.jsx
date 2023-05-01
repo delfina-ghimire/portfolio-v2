@@ -4,7 +4,7 @@ import "./contact.css";
 import shape from "../../assets/shape.png";
 import mailbox from "../../assets/Mailbox.svg";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { ImFacebook } from "react-icons/im";
+import { BsMedium } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import { emailJS } from "../../../config";
 
@@ -12,10 +12,23 @@ const socialLinks = [
   {
     key: "github",
     Icon: <FaGithub size={20} />,
+    link: "https://github.com/delfina-ghimire",
   },
-  { key: "facebook", Icon: <ImFacebook size={20} /> },
-  { key: "twitter", Icon: <FaTwitter size={20} /> },
-  { key: "linkedin", Icon: <FaLinkedin size={20} /> },
+  {
+    key: "medium",
+    Icon: <BsMedium size={20} />,
+    link: "https://medium.com/@around_delfi",
+  },
+  {
+    key: "twitter",
+    Icon: <FaTwitter size={20} />,
+    link: "https://twitter.com/around_delfi",
+  },
+  {
+    key: "linkedin",
+    Icon: <FaLinkedin size={20} />,
+    link: "https://www.linkedin.com/in/delfina-ghimire-a9a999188/",
+  },
 ];
 
 const ContactMe = () => {
@@ -93,8 +106,8 @@ const ContactMe = () => {
             <div className="social-media">
               <p>Connect Online :</p>
               <div className="social-icons">
-                {socialLinks.map(({ key, Icon }) => (
-                  <a href="#" key={key}>
+                {socialLinks.map(({ key, Icon, link }) => (
+                  <a href={link} key={key}>
                     {Icon}
                   </a>
                 ))}

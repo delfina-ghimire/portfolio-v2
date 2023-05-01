@@ -42,15 +42,19 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
             {desc}
           </p>
           <div className="font-[600]  text-[#777] text-[1.5rem] md:text-[1.7rem] mb-[1.5rem] no-underline flex gap-4 items-center justify-center ">
-            {techs?.map((tech) => {
-              return <span key={tech}>{tech}</span>;
+            {techs?.map((tech, i) => {
+              return <span key={i + 5}>{tech}</span>;
             })}
           </div>
           <div className="flex flex-row items-center justify-center gap-4">
-            {icons?.map((icon) => {
+            {icons?.map((icon, i) => {
               return (
-                <div>
-                  <a className=" p-2 cursor-pointer" href={icon.link}>
+                <div key={i + 1}>
+                  <a
+                    target="_blank"
+                    className=" p-2 cursor-pointer"
+                    href={icon.link}
+                  >
                     <Tooltip text={icon.alt}>
                       <img src={icon.src} />
                     </Tooltip>

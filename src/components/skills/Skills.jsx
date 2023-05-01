@@ -18,15 +18,16 @@ const Skills = () => {
                 className="w-full h-full"
                 src={skill.icon}
                 alt={skill.title}
+                
               />
             </div>
             <div className="text-center">
-              <h4 className="text-[1.5rem] md:text-[2rem] font-bold px-8 -py-[-2rem] md:py-6">
+              <h4 className="text-[1.2rem] md:text-[1.7rem] font-bold px-8 -py-[-2rem] md:py-6">
                 {skill.title}
               </h4>
-              <ul className="text-gray-600 text-center text-2xl md:text-3xl leading-10">
-                {skill.list.map((item) => (
-                  <div>{item}</div>
+              <ul className="text-gray-600 text-center text-xl md:text-3xl ">
+                {skill.list.map((item, i) => (
+                  <li className="leading-[3rem]" key={i}>{item}</li>
                 ))}
               </ul>
             </div>

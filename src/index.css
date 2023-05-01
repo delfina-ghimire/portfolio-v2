@@ -24,12 +24,29 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
 body{
     font-family: "Lora", serif;
     font-size: 1.6rem;
     font-weight: 400;
     box-sizing: border-box;
+     overflow: scroll;
+   -ms-overflow-style: none;
+    scrollbar-width: none;
     
+}
+
+ body::-webkit-scrollbar {
+    display: none;
+        scrollbar-width: none;
+
+  }
+
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 
