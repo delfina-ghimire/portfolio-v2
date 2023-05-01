@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "../commons/SectionTitle";
 import "./contact.css";
 import shape from "../../assets/shape.png";
 import mailbox from "../../assets/Mailbox.svg";
 import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { ImFacebook } from "react-icons/im";
+import emailjs from "@emailjs/browser";
+import { emailJS } from "../../../config";
 
 const socialLinks = [
   {
@@ -17,6 +19,13 @@ const socialLinks = [
 ];
 
 const ContactMe = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
   const handleFocus = (e) => {
     let parent = e.target.parentNode;
     parent.classList.add("focus");
@@ -27,6 +36,29 @@ const ContactMe = () => {
     if (e.target.value === "") {
       parent.classList.remove("focus");
     }
+  };
+
+  const handleSubmit = () => {
+    emailjs
+      .send(
+        emailJS.serviceID,
+        emailJS.templateID,
+        {
+          from_name: formData?.name,
+          message: formData?.message,
+          subject: formData?.subject,
+          from_email: formData?.email,
+        },
+        emailJS.publicID
+      )
+      .then(
+        (result) => {
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   useEffect(() => {
@@ -72,29 +104,63 @@ const ContactMe = () => {
           <div className="contact-form">
             <span className="circle one" />
             <span className="circle two" />
-            <form action="index.html" autoComplete="off">
+            <form autoComplete="off" onSubmit={(e) => e.preventDefault()}>
               <h3 className="title">Say Hi!</h3>
               <div className="input-container">
-                <input type="text" name="name" className="input" />
-                <label htmlFor>Full Name</label>
+                <input
+                  value={formData?.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  type="text"
+                  name="name"
+                  className="input"
+                />
+                <label>Full Name</label>
                 <span>Full Name</span>
               </div>
               <div className="input-container">
-                <input type="email" name="email" className="input" />
-                <label htmlFor>Email</label>
+                <input
+                  value={formData?.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  type="email"
+                  name="email"
+                  className="input"
+                />
+                <label>Email</label>
                 <span>Email</span>
               </div>
               <div className="input-container">
-                <input type="text" name="subject" className="input" />
-                <label htmlFor>Subject</label>
+                <input
+                  value={formData?.subject}
+                  onChange={(e) =>
+                    setFormData({ ...formData, subject: e.target.value })
+                  }
+                  type="text"
+                  name="subject"
+                  className="input"
+                />
+                <label>Subject</label>
                 <span>Subject</span>
               </div>
               <div className="input-container textarea">
-                <textarea name="message" className="input" defaultValue={""} />
-                <label htmlFor>Message</label>
+                <textarea
+                  value={formData?.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  name="message"
+                  className="input"
+                  defaultValue={""}
+                />
+                <label>Message</label>
                 <span>Message</span>
               </div>
-              <button className="form-btn">Send</button>
+              <button onClick={() => handleSubmit()} className="form-btn">
+                Send
+              </button>
             </form>
           </div>
         </div>
