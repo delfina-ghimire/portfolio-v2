@@ -6,7 +6,7 @@ const Blog = () => {
   return (
     <>
       <div>
-        <div id="Blogs" className="py-[10rem] md:pb-[4rem]">
+        <div id="Blog" className="py-[10rem] md:pb-[4rem]">
           <SectionTitle title="Blogs" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-6">
