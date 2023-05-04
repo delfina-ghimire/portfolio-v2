@@ -4,6 +4,7 @@ import menu from "../../assets/menu.svg";
 import close from "../../assets/close.svg";
 import { navBarSection } from "./constants";
 import { useSpring, animated } from "@react-spring/web";
+import resume from "../../assets/docs/delfina_ghimire_frontend_resume.pdf";
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
       <div
-        className={`flex  fixed top-0 left-0 right-0 border border-red items-center justify-between  p-10 md:px-36 py-10 ${
+        className={`flex  fixed top-0 left-0 right-0  items-center justify-between  p-10 md:px-36 py-10 ${
           headerActive ? "bg-white shadow-lg" : ""
         }`}
       >
@@ -58,16 +59,23 @@ const Navbar = () => {
           </a>
         </div>
         <div>
-          <div className="hidden sm:flex">
+          <div className="hidden sm:flex text-xl md:text-3xl text-gray-900">
             {navBarSection.map(({ link, title }) => (
               <a
                 key={title}
-                className="ml-8 text-xl md:text-3xl text-gray-900 hover:text-indigo-700"
+                className="ml-8 py-2 hover:text-indigo-700 "
                 href={link}
               >
                 {title}
               </a>
             ))}
+            <a
+              href={resume}
+              download="delfina_frontend_resume"
+              className="px-4 ml-7 text-center py-2 border border-blue-500 hover:text-indigo-700 "
+            >
+              Resume
+            </a>
           </div>
         </div>
 
