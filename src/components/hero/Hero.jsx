@@ -1,4 +1,6 @@
+import { useState } from "react";
 import hero from "../../assets/hero.svg";
+import "./style.css";
 
 const Hero = () => {
   return (
@@ -13,7 +15,12 @@ const Hero = () => {
         </h1>
         <h4 className="invisible md:visible leading-10 text-[2rem] font-bold text-[#444]">
           Get in Touch 👉{" "}
-          <span className="cursor-pointer shadow-md">
+          <span
+            onClick={() => {
+              navigator.clipboard.writeText("delfina.ghimire@gmail.com");
+            }}
+            className="cursor-pointer shadow-sm link link-underline link-underline-black "
+          >
             delfina.ghimire@gmail.com
           </span>
         </h4>
