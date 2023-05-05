@@ -1,6 +1,7 @@
 import { useState } from "react";
 import hero from "../../assets/hero.svg";
 import "./style.css";
+import ClearBtn from "../commons/ClearBtn";
 
 const Hero = () => {
   return (
@@ -23,8 +24,12 @@ const Hero = () => {
           >
             delfina.ghimire@gmail.com
           </span>
+          <div className="mt-[7rem] font-thin text-[1.5rem]">
+            <ClearBtn btnText={"View my works"} link={"#Projects"} />
+          </div>
         </h4>
       </div>
+
       <div className=" flex-1 w-[100%] md:w-6/12 pb-8 md:pb-0">
         <img className="w-full h-full" src={hero} alt="" srcSet="" />
       </div>
