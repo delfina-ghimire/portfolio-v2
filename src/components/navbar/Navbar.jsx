@@ -47,9 +47,9 @@ const Navbar = () => {
     };
   }, [headerActive]);
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-6 justify-between items-center navbar ">
       <div
-        className={`flex  fixed top-0 left-0 right-0  items-center justify-between  p-10 md:px-36 py-10 ${
+        className={`flex fixed top-0 left-0 right-0 z-[1200] items-center justify-between p-10 md:px-36 py-10  ${
           headerActive ? "bg-white shadow-lg" : ""
         }`}
       >
