@@ -3,21 +3,24 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
   function Tooltip({ text, children }) {
     const [showTooltip, setShowTooltip] = useState(false);
 
-    // TODO Style Tooltip
+    // TODO Style Tooltip and Fix tooltip
     return (
-      <div className="relative">
+      <div className="">
         <div
           className="inline-block"
-          onMouseEnter={() => setShowTooltip(true)}
+          onMouseEnter={() => {
+            setShowTooltip(true);
+          }}
           onMouseLeave={() => setShowTooltip(false)}
         >
           {children}
         </div>
-        {showTooltip && (
-          <div className="absolute top-[-35px] w-[8rem] z-10 px-3 py-3 font-lora text-[1rem] font-bold tracking-[1px] text-blue-900 rounded-lg border bg-gray-50  border-blue-900 shadow-sm">
+        {/* {showTooltip && (
+          // <div className="absolute top-[-35px] w-[8rem] z-[1000] px-3 py-3 font-lora text-[1rem] font-bold tracking-[1px] text-blue-900 rounded-lg border bg-gray-50  border-blue-900 shadow-sm">
+          <div className="absolute top-[-35px] right-0 px-3 py-3 font-lora text-[1rem] font-bold tracking-[1px] text-blue-900 rounded-lg border bg-gray-50  border-blue-900 shadow-sm w-[8rem] ">
             {text}
           </div>
-        )}
+        )} */}
       </div>
     );
   }
@@ -46,13 +49,16 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
               return <span key={i + 5}>{tech}</span>;
             })}
           </div>
-          <div className="flex flex-row items-center justify-center gap-4">
+          <div className="flex flex-row items-center justify-center gap-4 ">
             {icons?.map((icon, i) => {
               return (
-                <div key={i + 1}>
+                <div
+                  className="hover:scale-150 transition duration-300 ease-in"
+                  key={i + 1}
+                >
                   <a
                     target="_blank"
-                    className=" p-2 cursor-pointer"
+                    className=" p-2 cursor-pointer "
                     href={icon.link}
                   >
                     <Tooltip text={icon.alt}>

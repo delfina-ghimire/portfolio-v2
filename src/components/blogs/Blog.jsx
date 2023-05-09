@@ -9,16 +9,16 @@ const Blog = () => {
         <div id="Blog" className="py-[10rem] md:pb-[4rem]">
           <SectionTitle title="Blogs" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-6 ">
           {blogs.map((blog) => (
-            <div className="flex flex-col cursor-pointer rounded-xl bg-white shadow-lg hover:shadow-xl py-5 px-5">
+            <div className="flex flex-col rounded-xl bg-white shadow-lg hover:shadow-xl border border-slate-100 transition duration-100 ease-in  py-5 px-5 ">
               <div className="flex-1">
-                <div className="relative flex items-end overflow-hidden rounded-xl">
+                <div className="flex items-end overflow-hidden rounded-xl ">
                   <img key={blog?.id} src={blog?.image} alt="wallpaper" />
                 </div>
 
                 <div className="mt-10">
-                  <h2 className="text-slate-700 font-semibold text-2xl">
+                  <h2 className="text-slate-700 font-semibold text-[1.7rem]">
                     {blog.title}
                   </h2>
                   <p className="mt-1 text-lg text-slate-400">{blog.category}</p>
@@ -30,7 +30,7 @@ const Blog = () => {
 
               <div className="flex items-center flex-wrap ">
                 <button
-                  className={`text-white bg-gradient-to-r ${blog.colors.from} ${blog.colors.to} hover:scale-105 drop-shadow-md shadow-cla-blue px-4 py-2 rounded-lg text-xl flex flex-row`}
+                  className={`text-white bg-gradient-to-r ${blog.colors.from} ${blog.colors.to} hover:scale-105 drop-shadow-md shadow-cla-blue px-4 py-2 rounded-lg text-xl flex flex-row font-semibold transition duration-100 ease-in`}
                 >
                   <a href={blog?.src} target="_blank">
                     Read more
@@ -47,7 +47,7 @@ const Blog = () => {
       <div className="flex justify-center items-center">
         <a
           href="#"
-          className="flex flex-row my-6 py-[5rem] text-blue-500 hover:text-blue-400"
+          className="flex flex-row my-6 py-[5rem] text-blue-500 hover:text-blue-400 transition duration-100 ease-in"
         >
           <a target="_blank" href="https://medium.com/@around_delfi">
             Explore More
