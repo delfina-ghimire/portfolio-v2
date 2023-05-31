@@ -26,6 +26,26 @@ export const projects = [
     ],
   },
   {
+    image: project4,
+    id: "project-2a",
+    title: "Tigg Accounting Software",
+    desc: "A modern Travel Agency webpage built only using Html and css, written using BEM convention and followed 7-1 architecture pattern. Fluid Layouts, Responsive & flexible images,,Correct Units are also implemented.",
+    techs: ["Html", "CSS"],
+    icons: [
+      {
+        src: github,
+        alt: "View Code",
+        link: "/project-detail",
+        localLink: true,
+      },
+      {
+        src: live,
+        alt: "View Live",
+        link: "https://natours-travel-website.netlify.app/",
+      },
+    ],
+  },
+  {
     image: project2,
     id: "project-2",
     title: "SandBox - NFT Website",
@@ -60,25 +80,6 @@ export const projects = [
         src: live,
         alt: "View Live",
         link: "https://avocado-full-ecommerce-store.vercel.app/",
-      },
-    ],
-  },
-  {
-    image: project4,
-    id: "project-4",
-    title: "Natours - Travel Website",
-    desc: "A modern Travel Agency webpage built only using Html and css, written using BEM convention and followed 7-1 architecture pattern. Fluid Layouts, Responsive & flexible images,,Correct Units are also implemented.",
-    techs: ["Html", "CSS"],
-    icons: [
-      {
-        src: github,
-        alt: "View Code",
-        link: "https://github.com/delfina-ghimire/Natours-project",
-      },
-      {
-        src: live,
-        alt: "View Live",
-        link: "https://natours-travel-website.netlify.app/",
       },
     ],
   },
