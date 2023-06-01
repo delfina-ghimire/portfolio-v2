@@ -5,8 +5,10 @@ import close from "../../assets/close.svg";
 import { navBarSection } from "./constants";
 import { useSpring, animated } from "@react-spring/web";
 import resume from "../../assets/docs/delfina_ghimire_frontend_resume.pdf";
+import { BsArrowLeft } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ halfNav }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [headerActive, setHeaderActive] = useState(false);
 
@@ -53,22 +55,29 @@ const Navbar = () => {
           headerActive ? "bg-white shadow-lg" : ""
         }`}
       >
+        {halfNav ? (
+          <Link to={"/"}>
+            <button
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[1.6rem] px-5 py-2.5 text-center inline-flex  items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              <BsArrowLeft size={24} />
+              Go Back
+            </button>
+          </Link>
+        ) : (
+          <div>
+            <a href="#">
+              <img
+                src={logo}
+                alt="delfina frontend developer logo"
+                width={150}
+              />
+            </a>
+          </div>
+        )}
         <div>
-          <a href="#">
-            <img src={logo} alt="delfina frontend developer logo" width={150} />
-          </a>
-        </div>
-        <div>
-          <div className="hidden sm:flex text-xl md:text-3xl text-gray-900">
-            {navBarSection.map(({ link, title }) => (
-              <a
-                key={title}
-                className="ml-8 py-2 hover:text-indigo-700 "
-                href={link}
-              >
-                {title}
-              </a>
-            ))}
+          {halfNav ? (
             <a
               href={resume}
               download="delfina_frontend_resume"
@@ -76,7 +85,26 @@ const Navbar = () => {
             >
               Resume
             </a>
-          </div>
+          ) : (
+            <div className="hidden sm:flex text-xl md:text-3xl text-gray-900">
+              {navBarSection.map(({ link, title }) => (
+                <a
+                  key={title}
+                  className="ml-8 py-2 hover:text-indigo-700 "
+                  href={link}
+                >
+                  {title}
+                </a>
+              ))}
+              <a
+                href={resume}
+                download="delfina_frontend_resume"
+                className="px-4 ml-7 text-center py-2 border border-blue-500 hover:text-indigo-700 "
+              >
+                Resume
+              </a>
+            </div>
+          )}
         </div>
 
         {/* navbar for small devices */}
