@@ -3,6 +3,7 @@ import project2 from "../../assets/p2.png";
 import project3 from "../../assets/p3.png";
 import project4 from "../../assets/p4.png";
 import github from "../../assets/icons/github.svg";
+import view from "../../assets/icons/detail.svg";
 import live from "../../assets/icons/external-link.svg";
 
 export const projects = [
@@ -10,7 +11,7 @@ export const projects = [
     image: project1,
     id: "project-1",
     title: "FriendsBook",
-    desc: "A Fullstack social media application with CRUD functionality for posts & users, view friends post on your timeline, follow/unfollow users, like/dislike posts, get news and follow recomendations.",
+    desc: "A full-stack social media application with comprehensive CRUD functionality for both posts and users. Users can view their friends' posts on their timeline, follow or unfollow other users, and like or dislike posts. The application also provides news updates and personalized recommendations for users to follow.",
     techs: ["React", "MongoDB", "Express", "Node js"],
     icons: [
       {
@@ -29,11 +30,11 @@ export const projects = [
     image: project4,
     id: "project-2a",
     title: "Tigg Accounting Software",
-    desc: "A modern Travel Agency webpage built only using Html and css, written using BEM convention and followed 7-1 architecture pattern. Fluid Layouts, Responsive & flexible images,,Correct Units are also implemented.",
-    techs: ["Html", "CSS"],
+    desc: "Tigg is a user-friendly cloud-based accounting software that combines accounting, billing, and bookkeeping. It simplifies financial management, streamlines tasks like invoicing and report generation, and offers comprehensive features.",
+    techs: ["React", "Next.js", "Typescript", "REST", "Ant-Design"],
     icons: [
       {
-        src: github,
+        src: view,
         alt: "View Code",
         link: "/project-detail",
         localLink: true,
@@ -41,7 +42,7 @@ export const projects = [
       {
         src: live,
         alt: "View Live",
-        link: "https://natours-travel-website.netlify.app/",
+        link: "https://www.tiggapp.com/",
       },
     ],
   },
@@ -49,7 +50,7 @@ export const projects = [
     image: project2,
     id: "project-2",
     title: "SandBox - NFT Website",
-    desc: "SandBox is the Modern UX / UI Site that allows you to the explore, create, sale, and purchase the NFTs. It consists the tuned blend of multiple complex gradiends and graphics.",
+    desc: "SandBox is a modern UX/UI site that allows you to explore, create, sell, and purchase NFTs. It consists of a well-tuned blend of multiple complex gradients and graphics.",
     techs: ["React", "Tailwind css"],
     icons: [
       {
@@ -68,7 +69,7 @@ export const projects = [
     image: project3,
     id: "project-3",
     title: "Avacodo: Ecommerce Website",
-    desc: "It is a Responsive Multipage Ecommerce site with an attractive modern theme, and complex layered footer. The code is arranged in scalable organized file architecture and is written using BEM naming convention.",
+    desc: "It is a responsive multipage e-commerce site with an attractive modern theme and a complex layered footer. The code is structured in a scalable and organized file architecture, following the BEM naming convention.",
     techs: ["React", "MongoDB", "Express", "Node js"],
     icons: [
       {
