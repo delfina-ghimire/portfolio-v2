@@ -13,7 +13,7 @@ function InnerTitle({ title }) {
 const Project = ({ id, image, title, desc, techs, responsibilities }) => {
   return (
     <>
-      <article className="flex flex-col md:flex-row flex-1  cursor-pointer p-4 mb-[4.5rem]   text-[1.5rem] md:text-[2rem] ">
+      <article className="flex flex-col md:flex-row flex-1 p-4 mb-[4.5rem]   text-[1.5rem] md:text-[2rem] ">
         <div className="w-full md:w-[60%] p-8  pb-6 pt-5">
           <h3 className=" font-bold leading-4 mb-8 tracking-[0.5px] pt-4 md:pt-10">
             {title}

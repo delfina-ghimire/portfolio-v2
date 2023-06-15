@@ -1,5 +1,5 @@
 import SectionTitle from "../commons/SectionTitle";
-import tiggBanner from "../../assets/banner.png";
+import tiggBanner from "../../assets/tigg-banner.png";
 import ClearBtn from "../commons/ClearBtn";
 import Project from "./Project";
 import { projectContent } from "./constant";
@@ -10,14 +10,13 @@ export function AboutProject() {
       <div
         className="mb-10"
         style={{
-          backgroundImage: `url(${tiggBanner})`,
+          background: ` linear-gradient(138deg,  rgba(0, 8, 187, 0.7),rgba(50, 200, 255, 0.4)), url(${tiggBanner})`,
           height: "30rem",
           backgroundRepeat: "no-repeat",
+          backgroundPositionY: "60%",
+          backgroundSize: "cover",
         }}
-      >
-        <h2 className="text-white">Tigg Accounting Software</h2>
-      </div>
-      {/* <img className="shadow-lg" src={tiggBanner} /> */}
+      ></div>
       <p className="md:text-[1.8rem] text-[#777] font-[400] flex justify-center items-center px-10  ">
         Tigg is a cloud-based accounting software that combines accounting,
         billing, and bookkeeping in one solution. It offers a user-friendly
@@ -31,6 +30,7 @@ export function AboutProject() {
           btnText={"Checkout Tigg"}
           link={"https://www.tiggapp.com/"}
           diffPage={true}
+          bordered={true}
         />
       </div>
 
