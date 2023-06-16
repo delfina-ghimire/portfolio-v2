@@ -1,6 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { RiArrowRightSFill } from "react-icons/ri";
+import {
+  RiArrowRightSFill,
+  RiExternalLinkFill,
+  RiExternalLinkLine,
+  RiGithubFill,
+} from "react-icons/ri";
+import ClearBtn from "../commons/ClearBtn";
 
 function InnerTitle({ title }) {
   return (
@@ -10,7 +14,15 @@ function InnerTitle({ title }) {
   );
 }
 
-const Project = ({ id, image, title, desc, techs, responsibilities }) => {
+const Project = ({
+  id,
+  image,
+  title,
+  desc,
+  techs,
+  responsibilities,
+  extraInfo,
+}) => {
   return (
     <>
       <article className="flex flex-col md:flex-row flex-1 p-4 mb-[4.5rem]   text-[1.5rem] md:text-[2rem] ">
@@ -25,16 +37,37 @@ const Project = ({ id, image, title, desc, techs, responsibilities }) => {
           <InnerTitle title="Responsibilities" />
 
           <div className="font-[400]  text-[#777] text-[1.4rem] md:text-[1.6rem] mb-[1.5rem] no-underline flex flex-col   justify-center gap-2">
-            {responsibilities?.map((responsibility, i) => {
+            {responsibilities?.map((responsibility) => {
               return (
-                <span className="flex items-center" key={i + 5}>
+                <span className="flex  items-center" key={id}>
                   {" "}
                   <RiArrowRightSFill />
                   {responsibility}
                 </span>
               );
             })}
+
+            {extraInfo ? (
+              <div className="flex flex-col text-justify  mt-10" key={id}>
+                {extraInfo}
+                <p className="mt-10">
+                  Here's the link if you like to check them out:
+                </p>
+                <div className="flex gap-5 my-5">
+                  <button className="px-4 py-2  flex items-center gap-4 border border-blue-500 rounded-xl">
+                    <span className="">View Code</span>
+                    <RiGithubFill color="blue" size={24} />
+                  </button>
+
+                  <button className="px-4 py-2 flex items-center gap-4 border border-blue-500 rounded-xl">
+                    <span className="">View Live</span>
+                    <RiExternalLinkLine color="blue" size={24} />
+                  </button>
+                </div>
+              </div>
+            ) : null}
           </div>
+
           <InnerTitle title="Technologies" />
           <div className="font-[600]   text-[#777] text-[1.5rem] md:text-[1.4rem] mb-[1.5rem] no-underline flex flex-wrap gap-4 items-center ">
             {techs?.map((tech, i) => {

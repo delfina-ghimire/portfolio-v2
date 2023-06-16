@@ -1,4 +1,3 @@
-import SectionTitle from "../commons/SectionTitle";
 import tiggBanner from "../../assets/tigg-banner.png";
 import ClearBtn from "../commons/ClearBtn";
 import Project from "./Project";
