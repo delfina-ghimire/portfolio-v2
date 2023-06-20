@@ -1,9 +1,7 @@
 import project1 from "../../assets/tigg-pos.png";
 import project2 from "../../assets/konva.png";
-import project3 from "../../assets/p3.png";
-import project4 from "../../assets/p4.png";
-import github from "../../assets/icons/github.svg";
-import live from "../../assets/icons/external-link.svg";
+import project3 from "../../assets/admin.png";
+import project4 from "../../assets/tigg-web.png";
 
 export const projectContent = [
   {
@@ -34,7 +32,7 @@ export const projectContent = [
   },
 
   {
-    image: project1,
+    image: project3,
     id: "project-2",
     title: "Tigg Admin Dashboard",
     desc: "It  a interface for authorized admins to manage, monitor, and configure Tigg web application. It provides features like user management, content editing, data and analytics, configuration, communication & updates and system monitoring.",
@@ -56,7 +54,7 @@ export const projectContent = [
     ],
   },
   {
-    image: project1,
+    image: project4,
     id: "project-3",
     title: "Tigg Accounting Software",
     desc: "Major software.",

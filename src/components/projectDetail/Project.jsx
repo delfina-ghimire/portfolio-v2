@@ -84,7 +84,7 @@ const Project = ({
           </div>
         </div>
 
-        <div className="rounded-[1rem] pa-1 flex flex-col gap-24 pt-24">
+        <div className="rounded-[1rem] pa-1 flex flex-col gap-10 pt-24">
           <img
             className="rounded-[1rem] border border-gray-200 shadow-sm "
             src={image}
