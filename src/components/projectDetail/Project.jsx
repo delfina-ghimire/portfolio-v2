@@ -22,10 +22,11 @@ const Project = ({
   techs,
   responsibilities,
   extraInfo,
+  secondImg,
 }) => {
   return (
     <>
-      <article className="flex flex-col md:flex-row flex-1 p-4 mb-[4.5rem]   text-[1.5rem] md:text-[2rem] ">
+      <article className="flex flex-col md:flex-row flex-1 p-4 mb-[4.5rem] text-[1.5rem] md:text-[2rem] ">
         <div className="w-full md:w-[60%] p-8  pb-6 pt-5">
           <h3 className=" font-bold leading-4 mb-8 tracking-[0.5px] pt-4 md:pt-10">
             {title}
@@ -48,7 +49,7 @@ const Project = ({
             })}
 
             {extraInfo ? (
-              <div className="flex flex-col text-justify  mt-10" key={id}>
+              <div className="flex flex-col text-justify  mt-20" key={id}>
                 {extraInfo}
                 <p className="mt-10">
                   Here's the link if you like to check them out:
@@ -83,14 +84,25 @@ const Project = ({
           </div>
         </div>
 
-        <div className="rounded-[1rem] pa-1">
+        <div className="rounded-[1rem] pa-1 flex flex-col gap-24 pt-24">
           <img
             className="rounded-[1rem] border border-gray-200 shadow-sm "
             src={image}
             alt={title}
             target="_blank"
             rel="noopener noreferrer"
+            width={"600px"}
           />
+          {secondImg ? (
+            <img
+              className="rounded-[1rem] border border-gray-200 shadow-sm "
+              src={secondImg}
+              alt={title}
+              target="_blank"
+              rel="noopener noreferrer"
+              width={"600px"}
+            />
+          ) : null}
         </div>
       </article>
     </>

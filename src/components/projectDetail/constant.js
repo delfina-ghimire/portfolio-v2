@@ -1,5 +1,5 @@
-import project1 from "../../assets/p1.png";
-import project2 from "../../assets/p2.png";
+import project1 from "../../assets/tigg-pos.png";
+import project2 from "../../assets/konva.png";
 import project3 from "../../assets/p3.png";
 import project4 from "../../assets/p4.png";
 import github from "../../assets/icons/github.svg";
@@ -8,6 +8,7 @@ import live from "../../assets/icons/external-link.svg";
 export const projectContent = [
   {
     image: project1,
+    secondImg: project2,
     id: "project-1",
     title: "Tigg POS",
     desc: "It streamlines Point of Sale/Service (POS)  with advanced features including inventory management, sales tracking, and payment processing also providing a seamless transactional experience for businesses in the retail and service industries.",
@@ -34,50 +35,45 @@ export const projectContent = [
 
   {
     image: project1,
-    id: "project-1",
-    title: "Tigg POS",
-    desc: "It streamlines Point of Sale/Service (POS)  with advanced features including inventory management, sales tracking, and payment processing also providing a seamless transactional experience for businesses in the retail and service industries.",
+    id: "project-2",
+    title: "Tigg Admin Dashboard",
+    desc: "It  a interface for authorized admins to manage, monitor, and configure Tigg web application. It provides features like user management, content editing, data and analytics, configuration, communication & updates and system monitoring.",
     techs: [
-      "Next.js",
-      "Redux",
-      "React Query",
-      "Redux Toolkit",
+      "React",
+      "Ant-design",
       "Axios",
-      "React Table",
       "React Hook Form",
-      "Konva",
+      "React Router DOM",
+      "React Spring",
+      "swagger-ui-react",
     ],
     responsibilities: [
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
+      "Revamped old UI and codebase",
+      "Developed and implemented V2 features (such as new design and wireframe implementation,)  ",
+      "Resolved production hotfixes promptly to address critical issues and ensure uninterrupted operation.",
+      "Debugged and fixed software bugs to improve system stability and functionality.",
+      "Integrated both in-house and third-party APIs such as ZeptoMail.",
     ],
   },
   {
     image: project1,
-    id: "project-1",
-    title: "Tigg POS",
-    desc: "It streamlines Point of Sale/Service (POS)  with advanced features including inventory management, sales tracking, and payment processing also providing a seamless transactional experience for businesses in the retail and service industries.",
+    id: "project-3",
+    title: "Tigg Accounting Software",
+    desc: "Major software.",
     techs: [
-      "Next.js",
-      "Redux",
-      "React Query",
-      "Redux Toolkit",
+      "React",
+      "Ant Design",
       "Axios",
-      "React Table",
-      "React Hook Form",
-      "Konva",
+      "Moment",
+      "React Router DOM",
+      "Firebase",
+      "Styled Components",
+      "Sass",
     ],
     responsibilities: [
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
-      "Poop It streamlines Point of Sale/Service (POS) with advanced features",
+      "Implemented new design to enhance the visual appeal and user experience.",
+      "Conducted bug fixing to identify and resolve software issues, improving system stability and functionality.",
+      "Successfully migrated old API calls to the new backend, ensuring seamless integration and continued operation.",
     ],
   },
 ];
