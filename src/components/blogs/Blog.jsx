@@ -57,7 +57,6 @@ const Blog = () => {
           </span>
         </a>
       </div>
-      <div className="mt-6 mb-6 h-px bg-slate-200"></div>
     </>
   );
 };
