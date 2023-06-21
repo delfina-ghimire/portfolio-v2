@@ -5,7 +5,7 @@ import { projectContent } from "./constant";
 
 export function AboutProject() {
   return (
-    <div>
+    <div key={projectContent.id}>
       <div
         className="mb-10"
         style={{
