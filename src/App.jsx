@@ -1,36 +1,27 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import "./index.css";
-import {
-  About,
-  Blog,
-  ContactMe,
-  Footer,
-  Hero,
-  Navbar,
-  Projects,
-  Skills,
-} from "./components";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/home";
+import ProjectDetail from "./pages/ProjectDetail";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "project-detail",
+    element: <ProjectDetail />,
+  },
+]);
 
 function App() {
   useEffect(() => {
     document.title = "delfina | Frontend Developer";
   }, []);
 
-  return (
-    <div className="p-0 sm:px-[5rem] ">
-      <Navbar />
-      <div className="mt-20">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <ContactMe />
-        <Blog />
-        <Footer />
-      </div>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

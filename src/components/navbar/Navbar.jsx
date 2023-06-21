@@ -5,8 +5,10 @@ import close from "../../assets/close.svg";
 import { navBarSection } from "./constants";
 import { useSpring, animated } from "@react-spring/web";
 import resume from "../../assets/docs/delfina_ghimire_frontend_resume.pdf";
+import { BsArrowLeft } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ halfNav }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [headerActive, setHeaderActive] = useState(false);
 
@@ -46,37 +48,82 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [headerActive]);
+
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar ">
       <div
-        className={`flex fixed top-0 left-0 right-0 z-[1200] items-center justify-between p-10 md:px-36 py-10  ${
+        className={`flex fixed top-0 left-0 right-0 z-[1200] items-center justify-between p-10 md:px-24 py-10  ${
           headerActive ? "bg-white shadow-lg" : ""
         }`}
       >
-        <div>
-          <a href="#">
-            <img src={logo} alt="delfina frontend developer logo" width={150} />
-          </a>
-        </div>
-        <div>
-          <div className="hidden sm:flex text-xl md:text-3xl text-gray-900">
-            {navBarSection.map(({ link, title }) => (
-              <a
-                key={title}
-                className="ml-8 py-2 hover:text-indigo-700 "
-                href={link}
-              >
-                {title}
-              </a>
-            ))}
-            <a
-              href={resume}
-              download="delfina_frontend_resume"
-              className="px-4 ml-7 text-center py-2 border border-blue-500 hover:text-indigo-700 "
+        {halfNav ? (
+          <Link to={"/"}>
+            <button
+              type="button"
+              class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[1.6rem] px-5 py-2.5 text-center inline-flex  items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Resume
+              <BsArrowLeft size={24} />
+              Go Back
+            </button>
+          </Link>
+        ) : (
+          <div>
+            <a href="#">
+              <img
+                src={logo}
+                alt="delfina frontend developer logo"
+                width={150}
+              />
             </a>
           </div>
+        )}
+        <div>
+          {halfNav ? (
+            <div className="hidden sm:flex text-xl md:text-3xl text-gray-900">
+              {navBarSection
+                .filter(
+                  ({ title }) =>
+                    title !== "About" &&
+                    title !== "Skills" &&
+                    title !== "Projects"
+                )
+                .map(({ exLink, title }) => (
+                  <a
+                    key={title}
+                    className="ml-8 py-2 hover:text-indigo-700"
+                    href={exLink}
+                  >
+                    {title}
+                  </a>
+                ))}
+              <a
+                href={resume}
+                download="delfina_frontend_resume"
+                className="px-4 ml-7 text-center py-2 border border-blue-500 hover:text-indigo-700"
+              >
+                Resume
+              </a>
+            </div>
+          ) : (
+            <div className="hidden sm:flex text-xl md:text-3xl text-gray-900">
+              {navBarSection.map(({ link, title }) => (
+                <a
+                  key={title}
+                  className="ml-8 py-2 hover:text-indigo-700"
+                  href={link}
+                >
+                  {title}
+                </a>
+              ))}
+              <a
+                href={resume}
+                download="delfina_frontend_resume"
+                className="px-4 ml-7 text-center py-2 border border-blue-500 hover:text-indigo-700"
+              >
+                Resume
+              </a>
+            </div>
+          )}
         </div>
 
         {/* navbar for small devices */}

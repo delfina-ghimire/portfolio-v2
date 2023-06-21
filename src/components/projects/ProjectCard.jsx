@@ -1,5 +1,6 @@
 import { useState } from "react";
-const ProjectCard = ({ image, title, desc, techs, icons }) => {
+import { Link } from "react-router-dom";
+const ProjectCard = ({ id, image, title, desc, techs, icons }) => {
   function Tooltip({ text, children }) {
     const [showTooltip, setShowTooltip] = useState(false);
 
@@ -54,17 +55,25 @@ const ProjectCard = ({ image, title, desc, techs, icons }) => {
               return (
                 <div
                   className="hover:scale-150 transition duration-300 ease-in"
-                  key={i + 1}
+                  key={id}
                 >
-                  <a
-                    target="_blank"
-                    className=" p-2 cursor-pointer "
-                    href={icon.link}
-                  >
-                    <Tooltip text={icon.alt}>
-                      <img src={icon.src} />
-                    </Tooltip>
-                  </a>
+                  {icon?.localLink ? (
+                    <Link to={icon.link}>
+                      <Tooltip text={icon.alt}>
+                        <img src={icon.src} />
+                      </Tooltip>
+                    </Link>
+                  ) : (
+                    <a
+                      target="_blank"
+                      className=" p-2 cursor-pointer "
+                      href={icon.link}
+                    >
+                      <Tooltip text={icon.alt}>
+                        <img src={icon.src} />
+                      </Tooltip>
+                    </a>
+                  )}
                 </div>
               );
             })}
